@@ -8,9 +8,17 @@ import AdminIndex from './components/admin/AdminIndex.vue'
 import AdminSystem from './components/admin/AdminSystem.vue'
 import AdminRoot from './components/admin/AdminRoot.vue'
 import AdminUser from './components/admin/AdminUser.vue'
+import AdminUserAdd from './components/admin/AdminUserAdd.vue'
+import AdminUserEdit from './components/admin/AdminUserEdit.vue'
 import AdminFaction from './components/admin/AdminFaction.vue'
-Vue.use(VueRouter)
+import AdminFactionList from './components/admin/AdminFactionList.vue'
+import AdminFactionEdit from './components/admin/AdminFactionEdit.vue'
 
+
+
+
+
+Vue.use(VueRouter)
 const routes = [
     {
         path:'/HelloWorld',
@@ -71,12 +79,40 @@ const routes = [
             path: '/Admin/AdminUser',
             component: AdminUser,
             meta:{
-                title:"门派成员管理"
+                title:"门派成员列表"
+            },
+        },
+        {
+            path: '/Admin/AdminUserAdd',
+            component: AdminUserAdd,
+            meta:{
+                title:"注册会员"
+            },
+        },
+        {
+            path: '/Admin/AdminUserEdit/:id',
+            component: AdminUserEdit,
+            meta:{
+                title:"编辑会员"
             },
         },
         {
             path: '/Admin/AdminFaction',
             component: AdminFaction,
+            meta:{
+                title:"门派注册"
+            },
+        },
+        {
+            path: '/Admin/AdminFactionEdit/:id',
+            component: AdminFactionEdit,
+            meta:{
+                title:"门派信息编辑"
+            },
+        },
+        {
+            path: '/Admin/AdminFactionList',
+            component: AdminFactionList,
             meta:{
                 title:"门派注册管理"
             },
